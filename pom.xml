@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.company</groupId>
+  <artifactId>ticket-service</artifactId>
+  <version>1.0</version>
+
+  <properties>
+    <java.version>1.8</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+
+    <!-- Dependency versions -->
+    <lombok.version>1.18.0</lombok.version>
+    <commons.lang3>3.7</commons.lang3>
+
+    <!--Testing dependencies-->
+    <junit.version>4.12</junit.version>
+    <powermock.junit4.version>1.7.4</powermock.junit4.version>
+
+    <!-- Maven plugin versions -->
+    <maven.compiler.plugin.version>3.6.1</maven.compiler.plugin.version>
+    <shade.plugin.version>2.4.3</shade.plugin.version>
+  </properties>
+
+  <dependencies>
+    <!--Getters, Setters, Constructors-->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+    </dependency>
+
+     <!--Utils-->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>${commons.lang3}</version>
+    </dependency>
+    <!--Test dependencies - Junit, other test dependencies-->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.powermock</groupId>
+      <artifactId>powermock-module-junit4</artifactId>
+      <version>${powermock.junit4.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.powermock</groupId>
+      <artifactId>powermock-api-mockito</artifactId>
+      <version>${powermock.junit4.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+  <plugins>
+  <!-- Package as an executable jar/war -->
+  <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>${maven.compiler.plugin.version}</version>
+    <configuration>
+      <source>1.8</source>
+      <target>1.8</target>
+    </configuration>
+  </plugin>
+  </plugins>
+  </build>
+
+</project>
